@@ -1,0 +1,29 @@
+{% set build = 0 %}
+{% set version = '1.4.0' %}
+
+package:
+  name: appdirs
+  version: {{version}}
+
+about:
+  home: http://github.com/ActiveState/appdirs
+  license: MIT License
+  summary: "Python moduel for determining platform-specifc user data directories."
+
+source:
+  fn: appdirs-{{version}}.tar.gz
+  url: https://pypi.python.org/packages/source/a/appdirs/appdirs-{{version}}.tar.gz
+  md5: 1d17b4c9694ab84794e228f28dc3275b
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - setuptools
+
+build:
+  script:
+    - python setup.py install
